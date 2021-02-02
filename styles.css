@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #f6edea;
+}
+
+.mainContainer {
+  display: flex;
+  width: 70%;
+  flex-direction: row;
+  justify-content: center;
+  margin: auto;
+}
+
+.screenImg {
+  fill: grey;
+}
+
+.screenImg:hover {
+  fill: black;
+}
+
+.screenText {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.posterContainer {
+  position: relative;
+}
+
+.poster {
+  width: 250px;
+  height: 360px;
+  position: relative;
+}
+
+.filmInfo {
+  position: relative;
+
+  width: 100%;
+  height: 200px;
+  margin-left: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 25px;
+}
+
+.cinemaContainer {
+  width: 100%;
+  position: relative;
+}
+
+.seats {
+  width: 450px;
+  height: 280px;
+
+  position: relative;
+  justify-content: center;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.seat {
+  width: 45px;
+  height: 40px;
+  border-top-right-radius: 30%;
+  border-top-left-radius: 30%;
+  background-color: #e0730e;
+  margin-right: 5px;
+}
+
+.empty {
+  visibility: hidden;
+  cursor: not-allowed;
+}
+
+.hiddenCheckbox:hover + .empty:hover {
+  cursor: not-allowed;
+}
+
+hr {
+  margin-bottom: 10px;
+}
+
+.seat:focus {
+  box-shadow: 2px 3px 4px #020204;
+  border-top-right-radius: 30%;
+  border-top-left-radius: 30%;
+}
+
+.hiddenCheckbox:hover {
+  cursor: pointer;
+}
+
+.hiddenCheckbox.disabled {
+  cursor: not-allowed;
+}
+
+.hiddenCheckbox {
+  opacity: 0;
+  position: absolute;
+  border: none;
+  height: 35px;
+  width: 35px;
+  margin-top: 3px;
+  margin-left: 4px;
+}
+
+.hiddenCheckbox:checked + .seat {
+  background-color: #b09a86;
+}
+
+.hiddenCheckbox.disabled.notActive + .seat {
+  background-color: #ef4222;
+}
+
+.rowText {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
