@@ -9,7 +9,7 @@
   <body>
     <main class="mainContainer">
       <section class="posterContainer">
-        <img class="poster" src="images/brw.jpg" alt="poster to film" />
+        <img class="poster" src="images/brw.jpg" alt="Poster to film" />
         <div class="badge" data-description="lux">
           <div class="badgeSeat lux"></div>
           <div class="ticketType">
@@ -17,8 +17,7 @@
             <span class="price">100</span>
             <small class="currency">usd</small>
           </div>
-        </div>
-        <div class="badge" data-description="vip">
+
           <div class="badgeSeat vip"></div>
           <div class="ticketType">
             <div class="name"><a>Vip</a></div>
@@ -30,7 +29,7 @@
 
       <div class="cinemaContainer">
         <div class="filmInfo">
-          <h2>2001: A Space Odyssey</h2>
+          <h2 class="filmTitle">2001: A Space Odyssey</h2>
           <br />
           <p>2h 29min</p>
           <p>Adventure, Sci-Fi</p>
@@ -96,11 +95,11 @@
 
           <section class="rowLux">
             <span class="rowText">3</span>
-            <input id="checkbox" type="checkbox" value="3-6" class="hiddenCheckbox booked" tabindex="-1" />
-            <button class="seat booked" disabled title="The seat is booked"></button>
+            <input id="checkbox" type="checkbox" value="3-6" class="hiddenCheckbox booked" title="The seat is booked" tabindex="-1" />
+            <button class="seat booked" disabled></button>
             <label for="checkbox"></label>
-            <input id="checkbox" type="checkbox" value="3-5" class="hiddenCheckbox booked" tabindex="-1" />
-            <button class="seat booked" disabled title="The seat is booked"></button>
+            <input id="checkbox" type="checkbox" value="3-5" class="hiddenCheckbox booked" title="The seat is booked" tabindex="-1" />
+            <button class="seat booked" disabled></button>
             <label for="checkbox"></label>
             <input id="checkbox" type="checkbox" value="3-4" class="hiddenCheckbox disabled notActive" tabindex="-1" />
             <button class="seat" disabled title="The seat is blocked"></button>
@@ -132,17 +131,17 @@
             <input id="checkbox" disabled type="checkbox" value="4-3" class="hiddenCheckbox disabled" />
             <button class="seat empty"></button>
             <label for="checkbox"></label>
-            <input id="checkbox" type="checkbox" value="4-2" class="hiddenCheckbox booked" tabindex="-1" />
-            <button class="seat booked" disabled title="The seat is booked"></button>
+            <input id="checkbox" type="checkbox" value="4-2" class="hiddenCheckbox booked" title="The seat is booked" tabindex="-1" />
+            <button class="seat booked" disabled></button>
             <label for="checkbox"></label>
-            <input id="checkbox" type="checkbox" value="4-1" class="hiddenCheckbox booked" tabindex="-1" />
-            <button class="seat booked" disabled title="The seat is booked"></button>
+            <input id="checkbox" type="checkbox" value="4-1" class="hiddenCheckbox booked" title="The seat is booked" tabindex="-1" />
+            <button class="seat booked" disabled></button>
             <label for="checkbox"></label>
             <span class="rowText">4</span>
           </section>
-        </div>
-        <div class="submitButton">
-          <button class="book" type="submit">Continue</button>
+          <div class="submitButton">
+            <button class="booking" type="submit">Continue</button>
+          </div>
         </div>
       </div>
     </main>
