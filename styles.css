@@ -259,7 +259,7 @@ hr {
   }
 
   .filmTitle {
-    font-size: 20px;
+    font-size: 19px;
   }
 }
 
@@ -279,6 +279,10 @@ hr {
 
   .seats {
     width: 450px;
+  }
+
+  .filmTitle {
+    font-size: 20px;
   }
 
   .hiddenCheckbox {
