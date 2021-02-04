@@ -64,7 +64,8 @@ body {
   background-color: #e0730e;
 }
 
-.badge {
+.badge,
+.legend {
   display: flex;
   padding: 10px;
 }
@@ -73,6 +74,22 @@ body {
 .ticketType {
   position: relative;
   padding-left: 10px;
+}
+
+.occupiedSeat,
+.blockedSeat {
+  height: 40px;
+  width: 30px;
+  box-shadow: 2px 3px 4px #020204;
+}
+
+.legend {
+  padding-left: 10px;
+}
+
+.description {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .booking {
@@ -152,11 +169,13 @@ hr {
 .seat.booked,
 .rowVip .hiddenCheckbox:checked + .seat,
 .seat.booked,
-.booking {
+.booking,
+.occupiedSeat {
   background-color: #b09a86;
 }
 
-.hiddenCheckbox.disabled.notActive + .seat {
+.hiddenCheckbox.disabled.notActive + .seat,
+.blockedSeat {
   background-color: #ef4222;
   cursor: not-allowed;
 }
@@ -165,7 +184,8 @@ hr {
 .name,
 .price,
 .currency,
-.booking {
+.booking,
+.description {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -197,7 +217,9 @@ hr {
   }
 
   .badgeSeat.lux,
-  .badgeSeat.vip {
+  .badgeSeat.vip,
+  .occupiedSeat,
+  .blockedSeat {
     width: 20px;
     height: 30px;
     margin-left: 10px;
@@ -226,7 +248,7 @@ hr {
   .booking {
     width: 150px;
     height: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 70px;
   }
 }
 
@@ -236,7 +258,8 @@ hr {
     width: 70%;
   }
 
-  .badge {
+  .badge,
+  .legend {
     margin-left: 20px;
     padding: 10px;
   }
@@ -253,7 +276,9 @@ hr {
   }
 
   .badgeSeat.lux,
-  .badgeSeat.vip {
+  .badgeSeat.vip,
+  .occupiedSeat,
+  .blockedSeat {
     width: 30px;
     height: 40px;
   }
