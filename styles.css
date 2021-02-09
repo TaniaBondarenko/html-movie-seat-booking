@@ -55,11 +55,6 @@ body {
   position: relative;
 }
 
-.badgeSeat.lux,
-.badgeSeat.vip {
-  margin-bottom: 5px;
-}
-
 .badgeSeat.lux {
   background-color: #e0730e;
 }
@@ -67,7 +62,6 @@ body {
 .badge,
 .legend {
   display: flex;
-  padding: 10px;
 }
 
 .badgeSeat,
@@ -78,18 +72,14 @@ body {
 
 .occupiedSeat,
 .blockedSeat {
+  position: relative;
   height: 40px;
   width: 30px;
   box-shadow: 2px 3px 4px #020204;
 }
 
-.legend {
-  padding-left: 10px;
-}
-
 .description {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 5px;
 }
 
 .booking {
@@ -211,6 +201,7 @@ hr {
 
   .posterContainer {
     padding-top: 20px;
+    padding-left: 10px;
   }
 
   .posterImg {
@@ -228,13 +219,23 @@ hr {
     flex-direction: row;
   }
 
+  .badge,
+  .legend {
+    justify-content: flex-start;
+  }
+
+  .description,
+  .ticketType {
+    padding-right: 30px;
+  }
+
   .badgeSeat.lux,
   .badgeSeat.vip,
   .occupiedSeat,
   .blockedSeat {
     width: 20px;
     height: 30px;
-    margin-left: 10px;
+    flex-shrink: 0;
   }
 
   .filmTitle {
@@ -279,15 +280,15 @@ hr {
     margin-top: 35px;
   }
 
+  .badge,
+  .legend {
+    padding: 10px 0 10px 0;
+    justify-content: space-between;
+  }
+
   .filmInfo {
     width: 80%;
     margin-top: 35px;
-  }
-
-  .badge,
-  .legend {
-    margin-left: 20px;
-    padding: 10px;
   }
 
   .seats {
@@ -299,12 +300,6 @@ hr {
   .mainContainer {
     flex-direction: row;
     width: 70%;
-  }
-
-  .badge,
-  .legend {
-    margin-left: 20px;
-    padding: 10px;
   }
 
   .booking {
