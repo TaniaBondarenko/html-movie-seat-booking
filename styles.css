@@ -136,7 +136,7 @@ hr {
 
 .seat:focus {
   outline: none;
-  box-shadow: 0 5px 0 black;
+  box-shadow: 6px 6px 5px black;
   border-top-right-radius: 30%;
   border-top-left-radius: 30%;
 }
