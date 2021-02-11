@@ -134,7 +134,7 @@ hr {
   margin-bottom: 10px;
 }
 
-.seat:focus {
+.hiddenCheckbox:focus + .seat {
   outline: none;
   box-shadow: 6px 6px 5px black;
   border-top-right-radius: 30%;
@@ -143,12 +143,13 @@ hr {
 
 .seat:hover,
 .booking:hover,
-.seat:active {
+.seat:active,
+.hiddenCheckbox:focus + .seat {
   box-shadow: 6px 6px 5px white;
 }
 
-.hiddenCheckbox:hover + .seatLabel .seat,
-.hiddenCheckbox:focus + .seatLabel .seat {
+.hiddenCheckbox:hover + .seat,
+.hiddenCheckbox:focus + .seat {
   cursor: pointer;
 }
 
@@ -163,25 +164,25 @@ hr {
   width: 1px;
 }
 
-.hiddenCheckbox:checked + .seatLabel .seat,
-.seat.booked,
+.hiddenCheckbox.booked:checked + .seat.booked,
 .booking,
 .occupiedSeat {
   background-color: #b09a86;
 }
 
-.hiddenCheckbox:checked + .seatLabel .seat,
+.hiddenCheckbox:checked + .seat,
 .rowVip .hiddenCheckbox:checked + .seat {
   background-color: #a32432;
+  box-shadow: 6px 6px 5px white;
 }
 
-.hiddenCheckbox.disabled.notActive + .seatLabel .seat,
+.hiddenCheckbox.disabled.notActive + .seat,
 .blockedSeat {
   background-color: #ef4222;
   cursor: not-allowed;
 }
 
-.hiddenCheckbox.booked + .seatLabel .seat.booked {
+.hiddenCheckbox.booked + .seat.booked {
   cursor: not-allowed;
 }
 
