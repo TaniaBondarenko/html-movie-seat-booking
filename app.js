@@ -75,16 +75,14 @@ function createBookingButton() {
 function buyTicket() {
   let paidDiv = document.createElement("div");
   shopContainer.appendChild(paidDiv);
-  paidDiv.innerHTML = `Total price for ${count} tickets - ${totalPrice}usd`;
+  paidDiv.innerHTML = `<hr>Total price for ${count} tickets - ${totalPrice}usd`;
   bookingButton.classList.add("checked");
   stopNextActions();
   createPaidButton();
 }
 
 function stopNextActions() {
-  for (let i = 0; i < inputs.length; i++) {
-    inputs[i].setAttribute("disabled", "disabled");
-  }
+  inputs.forEach((element) => element.setAttribute("disabled", "disabled"));
   bookingButton.remove();
 }
 
