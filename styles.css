@@ -40,7 +40,8 @@ body {
 .mainContainer,
 .badgeSeat.lux,
 .badgeSeat.vip,
-.booking {
+.booking,
+.lastButton {
   box-shadow: 1px 2px 3px #020204;
 }
 
@@ -77,7 +78,8 @@ body {
   padding-left: 5px;
 }
 
-.booking {
+.booking,
+.lastButton {
   font-size: 16px;
   border-radius: 5%;
 }
@@ -138,6 +140,7 @@ hr {
 
 .seat:hover,
 .booking:hover,
+.lastButton:hover,
 .seat:active,
 .hiddenCheckbox:focus + .seat {
   box-shadow: 3px 5px 4px #020204;
@@ -165,7 +168,8 @@ hr {
 
 .hiddenCheckbox.booked:checked + .seat.booked,
 .booking,
-.occupiedSeat {
+.occupiedSeat,
+.lastButton {
   background-color: #b09a86;
 }
 
@@ -186,14 +190,51 @@ hr {
 }
 
 .booking:focus,
-.booking:active {
+.lastButton:focus,
+.booking:active,
+.lastButton:active {
   background-color: #eba963;
+}
+
+.bookTicket {
+  position: relative;
+  border: none;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.bookTicketRow,
+.bookTicketSeat,
+.BookTicketClass,
+.price {
+  margin-right: 5px;
+}
+
+.shopContainer {
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+  border: none;
+}
+
+.paidButton {
+  position: relative;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.lastButton {
+  text-align: center;
 }
 
 @media screen and (min-width: 300px) {
   .mainContainer {
     width: 90%;
-    height: 900px;
+    height: 1200px;
     flex-direction: column;
   }
 
@@ -263,11 +304,18 @@ hr {
     height: 30px;
     margin-bottom: 50px;
   }
+
+  .lastButton {
+    width: 150px;
+    height: 30px;
+    margin-bottom: 10px;
+  }
 }
 
 @media screen and (min-width: 600px) {
   .mainContainer {
     flex-direction: row;
+    height: 900px;
   }
 
   .posterContainer {
@@ -296,10 +344,15 @@ hr {
     width: 70%;
   }
 
-  .booking {
+  .booking,
+  .lastButton {
     width: 180px;
     height: 40px;
     margin-bottom: 30px;
+  }
+
+  .lastButton {
+    margin-bottom: 10px;
   }
 
   .posterImg {
@@ -324,6 +377,12 @@ hr {
   .booking {
     width: 200px;
     height: 50px;
+    margin-bottom: 10px;
+  }
+
+  .lastButton {
+    width: 200px;
+    height: 30px;
     margin-bottom: 10px;
   }
 
