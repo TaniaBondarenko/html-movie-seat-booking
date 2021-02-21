@@ -1,14 +1,10 @@
 const SEATS = document.querySelector(".seats");
-let inputs = Array.from(document.querySelectorAll("input"));
 let bookingButton;
 let shopContainer;
 let ticketChosen;
-let ticketValue;
 let ticketClass;
 let totalPrice = 0;
-let row;
 let count = 0;
-let bookTicket;
 
 function createShopContainer() {
   shopContainer = document.createElement("div");
@@ -20,18 +16,17 @@ SEATS.addEventListener("click", chooseTicket);
 SEATS.addEventListener("click", createBookingButton, { once: true });
 
 function chooseTicket({ target }) {
-  if (!target.matches("input") || bookingButton.classList.contains("checked")) {
+  ticketChosen = target;
+  if (!target.matches("input")) {
     return;
   } else if (!target.classList.contains("clicked")) {
-    ticketChosen = target;
-    ticketValue = ticketChosen.value;
-    rowSeat = ticketValue.split("-");
-    ticketChosen.classList.add("clicked");
+    rowSeat = ticketChosen.value.split("-");
+    target.classList.add("clicked");
     addTicket();
-  } else if (target.classList.contains("clicked")) {
+  } else {
+    defineTicketClass();
     target.classList.remove("clicked");
-    let ticketForDelete = document.getElementsByClassName(`${target.value}`)[0];
-    ticketForDelete.remove();
+    document.getElementsByClassName(`${target.value}`)[0].remove();
     totalPrice -= price;
     count -= 1;
   }
@@ -39,8 +34,8 @@ function chooseTicket({ target }) {
 
 function addTicket() {
   defineTicketClass();
-  bookTicket = document.createElement("div");
-  bookTicket.setAttribute("class", `bookTicket ${ticketValue}`);
+  let bookTicket = document.createElement("div");
+  bookTicket.setAttribute("class", `bookTicket ${ticketChosen.value}`);
   shopContainer.appendChild(bookTicket);
   bookTicket.innerHTML += `
                     <span class="bookTicketRow">Row ${rowSeat[0]} </span>
@@ -48,10 +43,12 @@ function addTicket() {
                     <span class="BookTicketClass">${ticketClass} </span> 
                     <span class="price">${price} usd.</span>
                    `;
+  totalPrice += price;
+  count += 1;
 }
 
 function defineTicketClass() {
-  row = ticketChosen.parentElement.parentElement;
+  let row = ticketChosen.parentElement.parentElement;
   if (row.classList.contains("rowVip")) {
     ticketClass = "VIP";
     price = 300;
@@ -59,8 +56,6 @@ function defineTicketClass() {
     ticketClass = "LUX";
     price = 100;
   }
-  totalPrice += price;
-  count += 1;
 }
 
 function createBookingButton() {
@@ -76,18 +71,18 @@ function buyTicket() {
   let paidDiv = document.createElement("div");
   shopContainer.appendChild(paidDiv);
   paidDiv.innerHTML = `<hr>Total price for ${count} tickets - ${totalPrice}usd`;
-  bookingButton.classList.add("checked");
   stopNextActions();
   createPaidButton();
 }
 
 function stopNextActions() {
+  let inputs = Array.from(document.querySelectorAll("input"));
   inputs.forEach((element) => element.setAttribute("disabled", "disabled"));
   bookingButton.remove();
 }
 
 function createPaidButton() {
-  paidButton = document.createElement("div");
+  let paidButton = document.createElement("div");
   paidButton.setAttribute("class", "paidButton");
   paidButton.innerHTML = `<button class="lastButton" type="submit">Pay</button>`;
   shopContainer.appendChild(paidButton);
