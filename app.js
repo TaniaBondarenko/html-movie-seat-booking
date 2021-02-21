@@ -41,7 +41,7 @@ function addTicket() {
                     <span class="bookTicketRow">Row ${rowSeat[0]} </span>
                     <span class="bookTicketSeat">Seat ${rowSeat[1]} </span> 
                     <span class="BookTicketClass">${ticketClass} </span> 
-                    <span class="price">${price} usd.</span>
+                    <span class="price">${price} usd</span>
                    `;
   totalPrice += price;
   count += 1;
@@ -86,4 +86,5 @@ function createPaidButton() {
   paidButton.setAttribute("class", "paidButton");
   paidButton.innerHTML = `<button class="lastButton" type="submit">Pay</button>`;
   shopContainer.appendChild(paidButton);
+  paidButton.scrollIntoView({ block: "end" });
 }
