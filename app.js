@@ -13,13 +13,13 @@ function createShopContainer() {
 }
 
 SEATS.addEventListener("click", chooseTicket);
-SEATS.addEventListener("click", createBookingButton, { once: true });
 
 function chooseTicket({ target }) {
   ticketChosen = target;
   if (!target.matches("input")) {
     return;
   } else if (!target.classList.contains("clicked")) {
+    createBookingButton();
     rowSeat = ticketChosen.value.split("-");
     target.classList.add("clicked");
     addTicket();
@@ -58,19 +58,25 @@ function defineTicketClass() {
   }
 }
 
-function createBookingButton() {
-  bookingButton = document.createElement("div");
-  bookingButton.setAttribute("class", "submitButton");
-  bookingButton.innerHTML = `<button class="booking" type="submit">Continue</button>`;
-  SEATS.appendChild(bookingButton);
-  createShopContainer();
-  bookingButton.addEventListener("click", buyTicket, { once: true });
-}
+let createBookingButton = (function () {
+  let executed = false;
+  return function () {
+    if (!executed) {
+      executed = true;
+      bookingButton = document.createElement("div");
+      bookingButton.setAttribute("class", "submitButton");
+      bookingButton.innerHTML = `<button class="booking" type="submit">Continue</button>`;
+      SEATS.appendChild(bookingButton);
+      createShopContainer();
+      bookingButton.addEventListener("click", buyTicket, { once: true });
+    }
+  };
+})();
 
 function buyTicket() {
   let paidDiv = document.createElement("div");
-  shopContainer.appendChild(paidDiv);
   paidDiv.innerHTML = `<hr>Total price for ${count} tickets - ${totalPrice}usd`;
+  shopContainer.appendChild(paidDiv);
   stopNextActions();
   createPaidButton();
 }
